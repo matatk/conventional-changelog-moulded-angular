@@ -2,7 +2,35 @@
 const tap = require('tap')
 const fixHeadingsAndWhitespace = require('../lib/fixHeadingsAndWhitespace')
 
-const test = `## [2.5.1](https://github.com/matatk/landmarks/compare/2.5.0...2.5.1) (2019-01-19)
+tap.test('on first use', t => {
+	const firstChangesText = `# 0.1.0
+
+
+### Features
+
+Cool stuff!
+
+
+
+`
+
+	const expected = `## 0.1.0
+
+### Features
+
+Cool stuff!
+
+`
+
+	t.equal(
+		fixHeadingsAndWhitespace(firstChangesText),
+		expected,
+		'fixes headings and spacing')
+	t.end()
+})
+
+tap.test('in normal use', t => {
+	const test = `## [2.5.1](https://github.com/matatk/landmarks/compare/2.5.0...2.5.1) (2019-01-19)
 
 
 ### Bug fixes
@@ -64,7 +92,7 @@ const test = `## [2.5.1](https://github.com/matatk/landmarks/compare/2.5.0...2.5
 
 `
 
-const expected = `## [2.5.1](https://github.com/matatk/landmarks/compare/2.5.0...2.5.1) (2019-01-19)
+	const expected = `## [2.5.1](https://github.com/matatk/landmarks/compare/2.5.0...2.5.1) (2019-01-19)
 
 ### Bug fixes
 
@@ -113,10 +141,9 @@ const expected = `## [2.5.1](https://github.com/matatk/landmarks/compare/2.5.0..
 
 `
 
-tap.test('fixes headings and removes whitespace', t => {
 	t.equal(
 		fixHeadingsAndWhitespace(test),
 		expected,
-		'fixes headings and space')
+		'fixes headings and spacing')
 	t.end()
 })
