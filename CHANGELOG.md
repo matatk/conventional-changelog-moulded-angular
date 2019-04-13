@@ -1,6 +1,6 @@
 # Conventional Changelog Moulded Angular Changelog
 
-# [0.1.0](https://github.com/matatk/conventional-changelog-moulded-angular/compare/0.0.0...0.1.0) (2019-04-13)
+## [0.1.0](https://github.com/matatk/conventional-changelog-moulded-angular/compare/0.0.0...0.1.0) (2019-04-13)
 
 ### Features
 
