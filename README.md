@@ -1,6 +1,8 @@
 Conventional Changelog Moulded Angular
 ======================================
 
+[![Build Status](https://travis-ci.com/matatk/conventional-changelog-moulded-angular.svg?branch=master)](https://travis-ci.com/matatk/conventional-changelog-moulded-angular)
+
 The Angular changelog style is clear and helpful, but it [semantically messes up the heading hierarchy](https://github.com/conventional-changelog/standard-version/issues/208). Also, [only a few commit types make it to the changelog](https://github.com/conventional-changelog/conventional-changelog/issues/317).
 
 This wrapper fixes the heading hierarchy and reports all the commit types. It uses [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) and its [Angular preset](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular) for most of the processing, and [conventional-commit-types](https://github.com/commitizen/conventional-commit-types) for the standard commit types.
