@@ -3,16 +3,16 @@ Conventional Changelog Moulded Angular
 
 The Angular changelog style is clear and helpful, but it [semantically messes up the heading hierarchy](https://github.com/conventional-changelog/standard-version/issues/208). Also, [only a few commit types make it to the changelog](https://github.com/conventional-changelog/conventional-changelog/issues/317).
 
-This wrapper fixes the heading hierarchy and reports all the commit types. It uses [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) and its [Angular preset](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular) for most of the processing.
+This wrapper fixes the heading hierarchy and reports all the commit types. It uses [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) and its [Angular preset](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular) for most of the processing, and [conventional-commit-types](https://github.com/commitizen/conventional-commit-types) for the standard commit types.
 
 What does it do?
 ----------------
 
  * Makes all releases have level-two headings.
 
- * Reports all commit types.
+ * Reports all conventional commits, but uses sentence case for the headings (personal preference).
 
- * Prepends a level-one heading "\<package-name\> Changelog" to the log.
+ * Prepends a level-one heading "\<package-name\> changelog" to the log.
 
 How to use it
 -------------
