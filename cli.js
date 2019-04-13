@@ -4,7 +4,7 @@ const fs = require('fs')
 const conventionalChangelogCore = require('conventional-changelog-core')
 
 const combine = require('./lib/combine')
-const writerOpts = require('./conventionalChangelogWriterOpts')
+const writerOpts = require('./conventionalChangelogWriterOpts').writerOpts
 
 const changelogFile = 'CHANGELOG.md'
 

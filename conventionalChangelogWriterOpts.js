@@ -1,8 +1,9 @@
 'use strict'
 // The aim of this is to use the Angular preset, but print out more types of commit message; thanks https://github.com/conventional-changelog/conventional-changelog/issues/317#issuecomment-390104826 :-)
 // This file started off as https://github.com/conventional-changelog/conventional-changelog-angular/blob/master/index.js which doesn't have a licence, so is assumed to be in the public domain.
+const conventionalCommitTypes = require('conventional-commit-types').types
 
-module.exports = {
+const writerOpts = {
 	transform: function(commit, context) {
 		const issues = []
 
@@ -10,28 +11,13 @@ module.exports = {
 			note.title = 'BREAKING CHANGES'
 		})
 
-		if (commit.type === 'feat') {
-			commit.type = 'Features'
-		} else if (commit.type === 'fix') {
-			commit.type = 'Bug fixes'
-		} else if (commit.type === 'perf') {
-			commit.type = 'Performance improvements'
-		} else if (commit.type === 'revert') {
-			commit.type = 'Reverts'
-		} else if (commit.type === 'docs') {
-			commit.type = 'Documentation'
-		} else if (commit.type === 'style') {
-			commit.type = 'Styles'
-		} else if (commit.type === 'refactor') {
-			commit.type = 'Code refactoring'
-		} else if (commit.type === 'test') {
-			commit.type = 'Tests'
-		} else if (commit.type === 'chore') {
-			commit.type = 'Chores'
-		} else if (commit.type === 'build') {
-			commit.type = 'Build system'
-		} else if (commit.type === null) {
+		if (commit.type === null) {
 			return  // commit message doesn't conform to the standard
+		} else if (conventionalCommitTypes.hasOwnProperty(commit.type)) {
+			const title = conventionalCommitTypes[commit.type].title
+			const sentenceCaseTitle = title.charAt(0)
+				+ title.slice(1).toLowerCase()
+			commit.type = sentenceCaseTitle
 		}
 
 		if (commit.scope === '*') {
@@ -66,4 +52,11 @@ module.exports = {
 
 		return commit
 	}
+}
+
+// Ensure that what is exported is a conventional-changelog config object, so
+// that this file can be passed to the --config option of the
+// conventional-changelog CLI tool, for debugging purposes.
+module.exports = {
+	'writerOpts': writerOpts
 }
