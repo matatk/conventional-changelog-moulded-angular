@@ -1,8 +1,6 @@
-**The [issues with headings have been fixed](https://github.com/conventional-changelog/standard-version/issues/208#issuecomment-489468757), and [it's now easy to include more commit types](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.0.0/README.md#types) (if you like), so this repo has been archived. I recommend you move to using the following...**
+**The [issues with headings have been fixed](https://github.com/conventional-changelog/standard-version/issues/208#issuecomment-489468757), and [it's now easy to include more commit types](https://github.com/conventional-changelog/conventional-changelog-config-spec/blob/master/versions/2.0.0/README.md#types) (if you like), so this repo has been archived.**
 
-* **New projects:** [standard-version](https://github.com/conventional-changelog/standard-version). This uses the new preset by default, and you can configure the commit types and all sorts as above.
-
-* **Existing projects:** [it's not yet possible to ask standard-version to start generating the changelog at a particular tag](https://github.com/conventional-changelog/standard-version/issues/205). I'd like to be able to recommend using [conventional-changelog-cli](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli), but I can't currently figure out how to use the new "conventional commits" preset with it. So maybe stick with this package for now (I can say that rather easily, as I very-much doubt anyone other than me is using it ;-)).
+**I recommend using [standard-version](https://github.com/conventional-changelog/standard-version): it uses the more accessible "conventionalcommits" preset by default as of version 6; you can customise the commit types added to the log via the ".versionrc.json" file and [you can use its `--tag-prefix` option if you use a custom (or remove the) tag prefix string](https://github.com/conventional-changelog/standard-version/issues/490#issuecomment-561157395).**
 
 ---
 
